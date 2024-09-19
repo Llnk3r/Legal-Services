@@ -1,0 +1,26 @@
+<form [formGroup]="consultationForm" (ngSubmit)="sendMessageToTelegramBot()">
+    <div class="">
+        <input type="text" formControlName="fullName" placeholder="fullName">
+        <span *ngIf="validatorService.validateControl(consultationForm, 'fullName')">
+            {{ validatorService.setErrorMessage('fullName') }}
+        </span>
+    </div>
+
+    <div class="">
+        <input type="text" formControlName="phone" placeholder="+380">
+        <span *ngIf="validatorService.validateControl(consultationForm, 'phone')">
+            {{ validatorService.setErrorMessage('phone') }}
+        </span>
+    </div>
+
+    <div class="">
+        <textarea formControlName="comment" placeholder="comment"></textarea>
+        <span *ngIf="validatorService.validateControl(consultationForm, 'comment')">
+            {{ validatorService.setErrorMessage('comment') }}
+        </span>
+    </div>
+    
+    <div *ngIf="message">{{ message }}</div>
+
+    <button type="submit">Send</button>
+</form>
