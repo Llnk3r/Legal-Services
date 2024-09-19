@@ -1,0 +1,25 @@
+@mixin generateFonts($name) {
+    $weightList: (
+        'Thin': (100), 
+        'ExtraLight': (200), 
+        'Light': (300), 
+        'Regular': (400),
+        'Medium': (500),
+        'SemiBold': (600), 
+        'Bold': (700), 
+        'ExtraBold': (800), 
+        'Black': (900)
+    );
+
+    @each $weightName, $weight in $weightList {
+
+        @font-face {
+            font-family: #{$name};
+            src: local('#{$name}-#{$weightName}'), url('#{$name}/#{$name}-#{$weightName}.ttf') format('truetype');
+            font-style: normal;
+            font-weight: $weight;
+        }
+
+    }
+
+}
