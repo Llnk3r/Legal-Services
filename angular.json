@@ -2,6 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "defaultProject": "Legal-Services",
   "projects": {
     "Legal-Services": {
       "projectType": "application",
@@ -66,6 +67,13 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "no-ssr": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "ssr": false,
+              "prerender": false
             }
           },
           "defaultConfiguration": "production"
@@ -78,6 +86,9 @@
             },
             "development": {
               "buildTarget": "Legal-Services:build:development"
+            },
+            "no-ssr": {
+              "buildTarget": "budcapital-new-front:build:no-ssr"
             }
           },
           "defaultConfiguration": "development"
