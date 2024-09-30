@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-no-ssr": "ng serve --configuration no-ssr",
+    "start:no-ssr": "ng serve --configuration no-ssr",
+    "start:scully": "npx scully serve",
     "build": "ng build",
-    "build-no-ssr": "ng build --configuration no-ssr",
-    "watch": "ng build --watch --configuration development",
+    "build:no-ssr": "ng build --configuration no-ssr",
+    "build:gh-pages": "ng build --configuration no-ssr --base-href https://llnk3r.github.io/Legal-Services/",
+    "build:scully": "ng build --configuration no-ssr && npx scully",
     "test": "ng test",
     "serve:ssr:Legal-Services": "node dist/legal-services/server/server.mjs"
   },
